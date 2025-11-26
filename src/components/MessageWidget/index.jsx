@@ -31,7 +31,6 @@ import {
   useLazyMessageWithSellerQuery,
   useSendMessageToSellerMutation,
 } from "@/redux/features/message/apiSlice";
-import Moment from "react-moment";
 
 function MessageWidgetContent({ pusher }) {
   const toggleMessage = useContext(MessageContext);
@@ -710,7 +709,9 @@ function MessageWidgetContent({ pusher }) {
                               </div>
                               <div className="flex space-x-1.5 items-center">
                                 <p className="text-xs text-[#797979] leading-[24px] flex space-x-1.5 items-center">
-                                  <Moment fromNow>{message.created_at}</Moment>
+                                  <span>
+                                    {dayjs(message.created_at).fromNow()}
+                                  </span>
                                 </p>
                                 <span>
                                   <DoubleCheckIcon />
@@ -746,9 +747,11 @@ function MessageWidgetContent({ pusher }) {
                                       <div className="flex justify-end">
                                         <div className="flex space-x-1.5 items-center">
                                           <p className="text-xs text-[#797979] leading-[24px] text-end">
-                                            <Moment fromNow>
-                                              {message.created_at}
-                                            </Moment>
+                                            <span>
+                                              {dayjs(
+                                                message.created_at
+                                              ).fromNow()}
+                                            </span>
                                           </p>
                                           <span>
                                             <DoubleCheckIcon />
