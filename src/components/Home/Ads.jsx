@@ -84,7 +84,9 @@ export default function Ads() {
                       width={152}
                       height={36}
                       src={`${
-                        logo ? checkUrlImage(logo) : "/assets/images/logo.svg"
+                        logo
+                          ? checkUrlImage(logo)
+                          : "https://multi-vendor-frontend-mauve.vercel.app/Final-logo.png"
                       }`}
                       alt="logo"
                       unoptimized
