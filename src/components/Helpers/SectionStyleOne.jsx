@@ -5,6 +5,7 @@ import LoaderStyleTwo from "./Loaders/LoaderStyleTwo";
 import ViewMoreTitle from "./ViewMoreTitle";
 import ProductCard from "./Cards/ProductCard";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 export default function SectionStyleOne({
   className,
   categoryTitle,
@@ -22,7 +23,7 @@ export default function SectionStyleOne({
         category_id: item.category_id,
         title: item.name,
         slug: item.slug,
-        image: appConfig.BASE_URL + item.thumb_image,
+        image: checkUrlImage(item.thumb_image),
         price: item.price,
         offer_price: item.offer_price,
         campaingn_product: null,

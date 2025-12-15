@@ -22,6 +22,7 @@ import TwiterIco from "../Helpers/icons/TwiterIco";
 import MessageIco from "../Helpers/icons/MessageIco";
 import { useFlyingCart } from "../Contexts/FlyingCartContext";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 const StarRating = ({ rating }) => (
   <div className="flex">
@@ -55,7 +56,7 @@ const ProductImage = ({ src, alt, className = "", onClick }) => (
     <Image
       fill
       style={{ objectFit: "scale-down" }}
-      src={`${appConfig.BASE_URL + src}`}
+      src={`${checkUrlImage(src)}`}
       alt={alt}
       className={`w-full h-full object-contain transform scale-110 ${className}`}
     />
@@ -550,7 +551,7 @@ export default function ProductView({
             <Image
               fill
               style={{ objectFit: "scale-down" }}
-              src={`${appConfig.BASE_URL + src}`}
+              src={`${checkUrlImage(src)}`}
               alt=""
               className="object-contain transform scale-110"
             />

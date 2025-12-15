@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ServeLangItem from "../ServeLangItem";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 export default function Selectbox({
   datas = [],
@@ -61,7 +62,7 @@ export default function Selectbox({
                     <div className="flex space-x-5 items-center p-2">
                       <div className="w-10 h-10">
                         <img
-                          src={appConfig.BASE_URL + value.image}
+                          src={checkUrlImage(value.image)}
                           alt=""
                           className="w-full h-full object-cover"
                         />

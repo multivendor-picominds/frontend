@@ -6,6 +6,7 @@ import CheckProductIsExistsInFlashSale from "../Shared/CheckProductIsExistsInFla
 import ServeLangItem from "../Helpers/ServeLangItem";
 import CurrencyConvert from "../Shared/CurrencyConvert";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 /**
  * Calculate variant price from variants array
@@ -94,7 +95,7 @@ const ProductImage = ({ imagePath }) => (
   <div className="w-[80px] h-[80px] overflow-hidden flex justify-center items-center border border-[#EDEDED] relative">
     <Image
       layout="fill"
-      src={`${appConfig.BASE_URL}${imagePath}`}
+      src={checkUrlImage(imagePath)}
       alt="product"
       className="w-full h-full object-contain"
     />

@@ -3,6 +3,7 @@ import appConfig from "@/appConfig";
 import ProductCard from "../Helpers/Cards/ProductCard";
 import DataIteration from "../Helpers/DataIteration";
 import CountDownWidget from "./CountDownWidget";
+import { checkUrlImage } from "@/utils/image";
 
 export default function FlashSale({ fetchData }) {
   const cp =
@@ -14,7 +15,7 @@ export default function FlashSale({ fetchData }) {
         category_id: item.category_id,
         title: item.name,
         slug: item.slug,
-        image: appConfig.BASE_URL + item.thumb_image,
+        image: checkUrlImage(item.thumb_image),
         price: item.price,
         offer_price: item.offer_price,
         campaingn_product: null,

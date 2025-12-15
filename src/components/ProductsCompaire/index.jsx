@@ -15,6 +15,7 @@ import {
 import LoginContext from "@/components/Contexts/LoginContext";
 import LoaderStyleTwo from "../Helpers/Loaders/LoaderStyleTwo";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 function ProductsCompaire() {
   const loginPopupBoard = useContext(LoginContext);
@@ -143,7 +144,7 @@ function ProductsCompaire() {
           <Image
             fill
             style={{ objectFit: "scale-down" }}
-            src={`${appConfig.BASE_URL}${item.image}`}
+            src={checkUrlImage(item.image)}
             alt=""
             className="w-full h-full object-contain"
           />

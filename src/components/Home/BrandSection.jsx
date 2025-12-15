@@ -1,6 +1,7 @@
 import Link from "next/link";
 import DataIteration from "../Helpers/DataIteration";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 export default function BrandSection({ className, sectionTitle, brands = [] }) {
   return (
     <div data-aos="fade-up" className={`w-full ${className || ""}`}>
@@ -29,7 +30,7 @@ export default function BrandSection({ className, sectionTitle, brands = [] }) {
                   <div className="w-full h-[130px] p-[30px] bg-white border border-primarygray flex justify-center items-center relative cursor-pointer">
                     <img
                       className="w-full h-full object-contain"
-                      src={`${appConfig.BASE_URL + datas.logo}`}
+                      src={`${checkUrlImage(datas.logo)}`}
                       alt={datas.name}
                     />
                   </div>

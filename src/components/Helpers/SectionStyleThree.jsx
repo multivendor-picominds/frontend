@@ -14,7 +14,7 @@ export default function SectionStyleThree({
       id: item.id,
       title: item.name,
       slug: item.slug,
-      image: appConfig.BASE_URL + item.thumb_image,
+      image: checkUrlImage(item.thumb_image),
       price: item.price,
       offer_price: item.offer_price,
       campaingn_product: null,

@@ -7,6 +7,7 @@ import Star from "../../../Helpers/icons/Star";
 import ServeLangItem from "../../../Helpers/ServeLangItem";
 import Link from "next/link";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 export default function ReviewTab({ className, reviews }) {
   return (
@@ -32,9 +33,7 @@ export default function ReviewTab({ className, reviews }) {
                         <Image
                           layout="fill"
                           objectFit="scale-down"
-                          src={`${
-                            appConfig.BASE_URL + datas.product.thumb_image
-                          }`}
+                          src={`${checkUrlImage(datas.product.thumb_image)}`}
                           alt=""
                           className="w-full h-full object-contain"
                         />

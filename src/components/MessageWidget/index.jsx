@@ -31,6 +31,7 @@ import {
   useLazyMessageWithSellerQuery,
   useSendMessageToSellerMutation,
 } from "@/redux/features/message/apiSlice";
+import { checkUrlImage } from "@/utils/image";
 
 function MessageWidgetContent({ pusher }) {
   const toggleMessage = useContext(MessageContext);
@@ -477,7 +478,7 @@ function MessageWidgetContent({ pusher }) {
         <Image
           layout="fill"
           objectFit="contain"
-          src={`${appConfig.BASE_URL + product.thumb_image}`}
+          src={`${checkUrlImage(product.thumb_image)}`}
           alt={product.name}
         />
       </div>

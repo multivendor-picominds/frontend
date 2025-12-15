@@ -11,6 +11,7 @@ import {
   useLazyRemoveFromWishlistApiQuery,
 } from "@/redux/features/product/apiSlice";
 import { useRouter } from "next/navigation";
+import { checkUrlImage } from "@/utils/image";
 
 export default function WishlistTab({ className }) {
   const router = useRouter();
@@ -84,9 +85,7 @@ export default function WishlistTab({ className }) {
                         <div className="w-[80px] h-[80px] overflow-hidden flex justify-center items-center border border-[#EDEDED] relative">
                           <Image
                             layout="fill"
-                            src={`${
-                              appConfig.BASE_URL + item.product.thumb_image
-                            }`}
+                            src={`${checkUrlImage(datas.product.thumb_image)}`}
                             alt="product"
                             className="w-full h-full object-contain"
                           />

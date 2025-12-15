@@ -18,6 +18,7 @@ import LoginContext from "../Contexts/LoginContext";
 import { useProductReportApiMutation } from "@/redux/features/product/apiSlice";
 import { toast } from "react-toastify";
 import Multivendor from "../Shared/Multivendor";
+import { checkUrlImage } from "@/utils/image";
 
 export default function SingleProductPage({ details }) {
   const loginPopupBoard = useContext(LoginContext);
@@ -95,7 +96,7 @@ export default function SingleProductPage({ details }) {
           id: item.id,
           title: item.name,
           slug: item.slug,
-          image: appConfig.BASE_URL + item.thumb_image,
+          image: checkUrlImage(item.thumb_image),
           price: item.price,
           offer_price: item.offer_price,
           campaingn_product: null,

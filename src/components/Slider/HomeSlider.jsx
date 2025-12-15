@@ -12,7 +12,10 @@ function HomeSlider({ images, settings }) {
             <div
               style={{
                 backgroundImage: `url(${
-                  process.env.NEXT_PUBLIC_BASE_URL + item.image
+                  item.image.includes("https://") ||
+                  item.image.includes("http://")
+                    ? item.image
+                    : process.env.NEXT_PUBLIC_BASE_URL + item.image
                 })`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",

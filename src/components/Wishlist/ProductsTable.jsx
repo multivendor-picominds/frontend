@@ -9,6 +9,7 @@ import { useLazyRemoveFromWishlistApiQuery } from "../../redux/features/product/
 import WishlistDltIco from "../Helpers/icons/WishlistDltIco";
 import auth from "../../utils/auth";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 export default function ProductsTable({ className, products }) {
   const router = useRouter();
@@ -90,7 +91,7 @@ export default function ProductsTable({ className, products }) {
           <div className="w-[80px] h-[80px] overflow-hidden flex justify-center items-center border border-[#EDEDED] relative">
             <Image
               layout="fill"
-              src={`${appConfig.BASE_URL}${item.product.thumb_image}`}
+              src={checkUrlImage(item.product.thumb_image)}
               alt="product"
               className="w-full h-full object-contain"
             />

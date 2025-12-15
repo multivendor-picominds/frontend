@@ -10,6 +10,7 @@ import ServeLangItem from "../Helpers/ServeLangItem";
 import CurrencyConvert from "../Shared/CurrencyConvert";
 import CartDeleteIco from "../Helpers/icons/CartDeleteIco";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 export default function Cart({ className }) {
   // Redux state selectors
@@ -126,7 +127,7 @@ export default function Cart({ className }) {
                   <div className="w-[65px] h-full relative">
                     <Image
                       layout="fill"
-                      src={`${appConfig.BASE_URL + item.product.thumb_image}`}
+                      src={`${checkUrlImage(item.product.thumb_image)}`}
                       alt={item.product.name}
                       className="w-full h-full object-contain"
                     />
