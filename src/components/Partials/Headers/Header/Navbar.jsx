@@ -549,7 +549,7 @@ export default function Navbar({ className }) {
             </div>
 
             {/* Right Section: Become Seller Button */}
-            {Multivendor() === 1 && renderBecomeSellerButton()}
+            {/* {Multivendor() === 1 && renderBecomeSellerButton()} */}
           </div>
         </div>
       </div>

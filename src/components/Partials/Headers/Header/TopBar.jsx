@@ -354,7 +354,7 @@ export default function TopBar({
           <div className="topbar-dropdowns lg:block hidden">
             <div className="flex ltr:space-x-6 rtl:-space-x-0 items-center">
               {/* Contact information (phone and email) */}
-              <ContactInfo contact={contact} />
+              {/* <ContactInfo contact={contact} /> */}
 
               {/* Currency selector dropdown */}
               <CurrencySelector
