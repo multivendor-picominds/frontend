@@ -88,6 +88,7 @@ export default function WishlistTab({ className }) {
                             src={`${checkUrlImage(datas.product.thumb_image)}`}
                             alt="product"
                             className="w-full h-full object-contain"
+                            unoptimized
                           />
                         </div>
                         <div className="flex-1 flex flex-col">

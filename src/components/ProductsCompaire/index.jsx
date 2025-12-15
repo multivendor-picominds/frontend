@@ -147,6 +147,7 @@ function ProductsCompaire() {
             src={checkUrlImage(item.image)}
             alt=""
             className="w-full h-full object-contain"
+            unoptimized
           />
         </div>
       </div>

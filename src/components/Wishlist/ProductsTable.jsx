@@ -94,6 +94,7 @@ export default function ProductsTable({ className, products }) {
               src={checkUrlImage(item.product.thumb_image)}
               alt="product"
               className="w-full h-full object-contain"
+              unoptimized
             />
           </div>
           <div className="flex-1 flex flex-col">

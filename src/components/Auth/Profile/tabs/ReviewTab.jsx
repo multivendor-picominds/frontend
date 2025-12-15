@@ -36,6 +36,7 @@ export default function ReviewTab({ className, reviews }) {
                           src={`${checkUrlImage(datas.product.thumb_image)}`}
                           alt=""
                           className="w-full h-full object-contain"
+                          unoptimized
                         />
                       </div>
                       <div className="flex-1 flex flex-col justify-center h-full">

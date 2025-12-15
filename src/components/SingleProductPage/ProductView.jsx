@@ -59,6 +59,7 @@ const ProductImage = ({ src, alt, className = "", onClick }) => (
       src={`${checkUrlImage(src)}`}
       alt={alt}
       className={`w-full h-full object-contain transform scale-110 ${className}`}
+      unoptimized
     />
   </div>
 );
@@ -554,6 +555,7 @@ export default function ProductView({
               src={`${checkUrlImage(src)}`}
               alt=""
               className="object-contain transform scale-110"
+              unoptimized
             />
             {product.offer_price && (
               <div className="w-[80px] h-[80px] rounded-full bg-qyellow text-qblack flex justify-center items-center text-xl font-medium absolute left-[30px] top-[30px]">

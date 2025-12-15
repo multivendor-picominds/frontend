@@ -98,6 +98,7 @@ const ProductImage = ({ imagePath }) => (
       src={checkUrlImage(imagePath)}
       alt="product"
       className="w-full h-full object-contain"
+      unoptimized
     />
   </div>
 );

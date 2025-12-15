@@ -480,6 +480,7 @@ function MessageWidgetContent({ pusher }) {
           objectFit="contain"
           src={`${checkUrlImage(product.thumb_image)}`}
           alt={product.name}
+          unoptimized
         />
       </div>
       <div className="flex-1 flex flex-col">

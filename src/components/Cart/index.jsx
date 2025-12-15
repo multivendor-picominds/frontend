@@ -130,6 +130,7 @@ export default function Cart({ className }) {
                       src={`${checkUrlImage(item.product.thumb_image)}`}
                       alt={item.product.name}
                       className="w-full h-full object-contain"
+                      unoptimized
                     />
                   </div>
 
