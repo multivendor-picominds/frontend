@@ -2,6 +2,7 @@ import appConfig from "@/appConfig";
 import ProductCard from "./Cards/ProductCard";
 import DataIteration from "./DataIteration";
 import ViewMoreTitle from "./ViewMoreTitle";
+import { checkUrlImage } from "@/utils/image";
 
 export default function SectionStyleThree({
   className,
