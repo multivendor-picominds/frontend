@@ -3,6 +3,7 @@ import Link from "next/link";
 import ShopNowBtn from "../../Helpers/Buttons/ShopNowBtn";
 import ServeLangItem from "../../Helpers/ServeLangItem";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 function TwoColumnAds({ bannerOne, bannerTwo }) {
   if (bannerOne || bannerTwo) {
@@ -19,9 +20,7 @@ function TwoColumnAds({ bannerOne, bannerTwo }) {
                 <div data-aos="fade-right" className={`h-full sm:w-1/2 w-full`}>
                   <div
                     style={{
-                      backgroundImage: `url(${
-                        appConfig.BASE_URL + bannerOne.image
-                      })`,
+                      backgroundImage: `url(${checkUrlImage(bannerOne.image)})`,
                       backgroundSize: `cover`,
                       backgroundRepeat: `no-repeat`,
                     }}
@@ -61,9 +60,7 @@ function TwoColumnAds({ bannerOne, bannerTwo }) {
                 <div data-aos="fade-left" className={`h-full sm:w-1/2 w-full`}>
                   <div
                     style={{
-                      backgroundImage: `url(${
-                        appConfig.BASE_URL + bannerTwo.image
-                      })`,
+                      backgroundImage: `url(${checkUrlImage(bannerTwo.image)})`,
                       backgroundSize: `cover`,
                       backgroundRepeat: `no-repeat`,
                     }}

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/dist/client/link";
 import ServeLangItem from "../../Helpers/ServeLangItem";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 function OneColumnAdsTwo({ data }) {
   if (data) {
@@ -10,7 +11,7 @@ function OneColumnAdsTwo({ data }) {
         <div
           data-aos="fade-right"
           style={{
-            backgroundImage: `url(${appConfig.BASE_URL + data.image})`,
+            backgroundImage: `url(${checkUrlImage(data.image)})`,
             backgroundSize: `cover`,
             backgroundRepeat: `no-repeat`,
           }}

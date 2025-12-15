@@ -10,6 +10,7 @@ import FontAwesomeCom from "../../../Helpers/icons/FontAwesomeCom";
 import Multivendor from "../../../Shared/Multivendor";
 import ServeLangItem from "../../../Helpers/ServeLangItem";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 /**
  * Navbar Component
@@ -292,9 +293,7 @@ export default function Navbar({ className }) {
         {megaMenuBanner && parseInt(megaMenuBanner.status) === 1 && (
           <div
             style={{
-              backgroundImage: `url(${
-                appConfig.BASE_URL + megaMenuBanner.image
-              })`,
+              backgroundImage: `url(${checkUrlImage(megaMenuBanner.image)})`,
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
             }}

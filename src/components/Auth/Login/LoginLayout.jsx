@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 function LoginLayout({ imgThumb, children }) {
   return (
@@ -20,7 +21,7 @@ function LoginLayout({ imgThumb, children }) {
                 <Image
                   width={608}
                   height={480}
-                  src={`${appConfig.BASE_URL + imgThumb}`}
+                  src={`${checkUrlImage(imgThumb)}`}
                   alt="login"
                   unoptimized
                 />

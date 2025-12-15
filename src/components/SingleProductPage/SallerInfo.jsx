@@ -34,7 +34,7 @@ export default function SallerInfo({ products, sellerInfo }) {
                 layout="fill"
                 src={`${
                   seller.user.image
-                    ? appConfig.BASE_URL + seller.user.image
+                    ? checkUrlImage(seller.user.image)
                     : "/assets/images/Group.png"
                 }`}
                 alt="saller"

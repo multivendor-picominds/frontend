@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 export default function BestSellers({ className, sallers = [] }) {
   return (
     <div className={`w-full ${className || ""}`}>
@@ -21,7 +22,7 @@ export default function BestSellers({ className, sallers = [] }) {
               <div className="sm:w-[170px] p-[30px] sm:h-[170px] w-[140px] h-[140px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2 relative">
                 <img
                   className="w-full h-full object-contain"
-                  src={`${appConfig.BASE_URL + saller.logo}`}
+                  src={`${checkUrlImage(saller.logo)}`}
                   alt={saller.slug}
                 />
               </div>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import ServeLangItem from "../Helpers/ServeLangItem";
 import { useRouter } from "next/navigation";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 export default function FourZeroFour({ breadcrumb = true }) {
   const { websiteSetup } = useSelector((state) => state.websiteSetup);
   const [siteDate, setSiteDate] = useState(null);
@@ -32,7 +33,7 @@ export default function FourZeroFour({ breadcrumb = true }) {
                     <Image
                       fill
                       style={{ objectFit: "scale-down" }}
-                      src={appConfig.BASE_URL + siteDate}
+                      src={checkUrlImage(siteDate)}
                       alt="404"
                       unoptimized
                     />

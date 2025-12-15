@@ -3,6 +3,7 @@ import Slider from ".";
 import Star from "../Helpers/icons/Star";
 import appConfig from "@/appConfig";
 import Image from "next/image";
+import { checkUrlImage } from "@/utils/image";
 
 function AboutUsSlider({ selector, settings, aboutData }) {
   return (
@@ -45,7 +46,7 @@ function AboutUsSlider({ selector, settings, aboutData }) {
                 <div className="w-[50px] h-[50px] rounded-full overflow-hidden relative">
                   <Image
                     layout="fill"
-                    src={`${appConfig.BASE_URL + item.image}`}
+                    src={`${checkUrlImage(item.image)}`}
                     alt="user"
                     unoptimized
                   />
@@ -100,7 +101,7 @@ function AboutUsSlider({ selector, settings, aboutData }) {
                 <div className="w-[50px] h-[50px] rounded-full overflow-hidden relative">
                   <Image
                     layout="fill"
-                    src={`${appConfig.BASE_URL + item.image}`}
+                    src={`${checkUrlImage(item.image)}`}
                     alt="user"
                     unoptimized
                   />

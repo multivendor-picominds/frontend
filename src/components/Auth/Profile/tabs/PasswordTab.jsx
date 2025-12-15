@@ -10,6 +10,7 @@ import HidePassIco from "@/components/Helpers/icons/HidePassIco";
 import ShowPassIco from "@/components/Helpers/icons/ShowPassIco";
 import { useUpdatePasswordApiMutation } from "@/redux/features/auth/apiSlice";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 // Reusable password input component
 function PasswordInput({ label, id, value, onChange, show, onToggle }) {
@@ -177,10 +178,9 @@ export default function PasswordTab() {
             <Image
               layout="fill"
               objectFit="scale-down"
-              src={
-                appConfig.BASE_URL +
+              src={checkUrlImage(
                 websiteSetup?.payload?.image_content?.change_password_image
-              }
+              )}
               alt="Thumbnail"
               unoptimized
             />
