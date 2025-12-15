@@ -7,6 +7,7 @@ import Middlebar from "./Middlebar";
 import Navbar from "./Navbar";
 import TopBar from "./TopBar";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 export default function Header({
   topBarProps,
@@ -67,7 +68,7 @@ export default function Header({
               {settings && (
                 <img
                   className="w-[153px] h-[44px] object-contain"
-                  src={`${appConfig.BASE_URL}${settings.logo}`}
+                  src={checkUrlImage(settings.logo)}
                   alt="logo"
                 />
               )}

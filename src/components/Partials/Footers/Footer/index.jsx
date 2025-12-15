@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import FontAwesomeCom from "../../../Helpers/icons/FontAwesomeCom";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 export default function Footer({ settings }) {
   // Get website setup data from Redux store
@@ -51,7 +52,7 @@ export default function Footer({ settings }) {
                     fill
                     sizes="100%"
                     style={{ objectFit: "scale-down" }}
-                    src={`${appConfig.BASE_URL + settings.logo}`}
+                    src={checkUrlImage(settings.logo)}
                     alt="logo"
                     unoptimized
                   />

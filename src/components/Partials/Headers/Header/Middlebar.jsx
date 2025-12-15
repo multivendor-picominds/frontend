@@ -16,6 +16,7 @@ import { setWishlistData } from "@/redux/features/whishlist/whishlistSlice";
 import { useLazyLogoutApiQuery } from "@/redux/features/auth/apiSlice";
 import { toast } from "react-toastify";
 import { deleteCookie } from "cookies-next";
+import { checkUrlImage } from "@/utils/image";
 
 export default function Middlebar({ className, settings }) {
   const router = useRouter();
@@ -93,7 +94,7 @@ export default function Middlebar({ className, settings }) {
                 {settings && (
                   <img
                     className="w-[153px] h-[44px] object-contain"
-                    src={`${appConfig.BASE_URL}${settings.logo}`}
+                    src={checkUrlImage(settings.logo)}
                     alt="logo"
                   />
                 )}

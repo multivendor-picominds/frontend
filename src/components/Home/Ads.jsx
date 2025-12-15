@@ -84,9 +84,7 @@ export default function Ads() {
                       width={152}
                       height={36}
                       src={`${
-                        logo
-                          ? appConfig.BASE_URL + logo
-                          : "/assets/images/logo.svg"
+                        logo ? checkUrlImage(logo) : "/assets/images/logo.svg"
                       }`}
                       alt="logo"
                       unoptimized
