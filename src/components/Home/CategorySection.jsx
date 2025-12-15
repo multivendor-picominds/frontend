@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 function CategorySection({ sectionTitle, categories }) {
   return (
@@ -30,7 +31,7 @@ function CategorySection({ sectionTitle, categories }) {
                         <div className="w-full h-full flex justify-center items-center relative transform scale-100 group-hover:scale-110 transition duration-300 ease-in-out">
                           <img
                             className="w-[57px] h-[57px] object-contain "
-                            src={appConfig.BASE_URL + item.image}
+                            src={checkUrlImage(item.image)}
                             alt=""
                           />
                         </div>

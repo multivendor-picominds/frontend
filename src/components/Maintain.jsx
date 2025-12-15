@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 function Maintain() {
   const { websiteSetup } = useSelector((state) => state.websiteSetup);
@@ -22,8 +23,9 @@ function Maintain() {
                   width={300}
                   height={300}
                   style={{ objectFit: "scale-down" }}
-                  src={`${appConfig.BASE_URL + maintain.image}`}
+                  src={`${checkUrlImage(maintain.image)}`}
                   alt="logo"
+                  unoptimized
                 />
               )}
             </div>

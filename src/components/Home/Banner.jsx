@@ -7,6 +7,7 @@ import FontAwesomeCom from "../Helpers/icons/FontAwesomeCom";
 import { getCookie } from "cookies-next";
 import appConfig from "@/appConfig";
 import HomeSlider from "../Slider/HomeSlider";
+import { checkUrlImage } from "@/utils/image";
 export default function Banner({
   className,
   images = [],
@@ -74,9 +75,9 @@ export default function Banner({
                   <div
                     className="w-full xl:h-1/2 xl:mr-0 mr-2 relative flex items-center group rtl:md:pr-[40px] ltr:md:pl-[40px] rtl:pr-[30] ltr:pl-[30px]"
                     style={{
-                      backgroundImage: `url(${
-                        appConfig.BASE_URL + sidebarImgOne.image
-                      })`,
+                      backgroundImage: `url(${checkUrlImage(
+                        sidebarImgOne.image
+                      )})`,
                       backgroundSize: "cover",
                       backgroundRepeat: "no-repeat",
                     }}
@@ -148,9 +149,9 @@ export default function Banner({
                 {sidebarImgTwo && (
                   <div
                     style={{
-                      backgroundImage: `url(${
-                        appConfig.BASE_URL + sidebarImgTwo.image
-                      })`,
+                      backgroundImage: `url(${checkUrlImage(
+                        sidebarImgTwo.image
+                      )})`,
                       backgroundSize: "cover",
                       backgroundRepeat: "no-repeat",
                     }}

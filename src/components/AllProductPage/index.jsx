@@ -915,7 +915,7 @@ function AllProductPageContent({ response, sellerInfo }) {
             <div className="w-[170px] h-[170px] p-[30px] flex justify-center items-center rounded-full bg-white relative mb-1 overflow-hidden">
               <img
                 className="w-full h-full object-contain"
-                src={`${appConfig.BASE_URL + sellerInfo.seller.logo}`}
+                src={`${checkUrlImage(sellerInfo.seller.logo)}`}
                 alt="logo"
               />
             </div>
@@ -944,9 +944,9 @@ function AllProductPageContent({ response, sellerInfo }) {
     return (
       <div
         style={{
-          backgroundImage: `url(${
-            appConfig.BASE_URL + response.shopPageSidebarBanner.image
-          })`,
+          backgroundImage: `url(${checkUrlImage(
+            response.shopPageSidebarBanner.image
+          )})`,
           backgroundSize: `cover`,
           backgroundRepeat: `no-repeat`,
         }}

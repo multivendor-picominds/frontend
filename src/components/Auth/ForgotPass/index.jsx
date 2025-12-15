@@ -18,6 +18,7 @@ import {
   useUserResetApiMutation,
 } from "@/redux/features/auth/apiSlice";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 // SVG Components for decorative shapes
 const LineShape = () => (
@@ -335,8 +336,9 @@ export default function ForgotPass() {
                 <Image
                   width={608}
                   height={480}
-                  src={`${appConfig.BASE_URL + imgThumb}`}
+                  src={`${checkUrlImage(imgThumb)}`}
                   alt="login"
+                  unoptimized
                 />
               )}
             </div>

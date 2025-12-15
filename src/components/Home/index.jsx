@@ -17,6 +17,7 @@ import OneColumnAdsOne from "./ProductAds/OneColumnAdsOne";
 import OneColumnAdsTwo from "./ProductAds/OneColumnAdsTwo";
 import CategorySection from "./CategorySection";
 import appConfig from "@/appConfig";
+import { checkUrlImage } from "@/utils/image";
 
 export default function Home({ homepageData }) {
   const getsectionTitles = homepageData.section_title;
@@ -71,9 +72,9 @@ export default function Home({ homepageData }) {
       <SectionStyleOne
         products={homepage?.popularCategoryProducts}
         categories={homepage?.popularCategories}
-        categoryBackground={
-          appConfig.BASE_URL + homepage.popularCategorySidebarBanner
-        }
+        categoryBackground={checkUrlImage(
+          homepage.popularCategorySidebarBanner
+        )}
         categoryTitle={sectionTitles && sectionTitles.Popular_Category}
         sectionTitle={sectionTitles && sectionTitles.Popular_Category}
         seeMoreUrl={`/products?highlight=popular_category`}
@@ -135,9 +136,9 @@ export default function Home({ homepageData }) {
             ? homepage?.featuredCategories
             : []
         }
-        categoryBackground={
-          appConfig.BASE_URL + homepage.featuredCategorySidebarBanner
-        }
+        categoryBackground={checkUrlImage(
+          homepage.featuredCategorySidebarBanner
+        )}
         categoryTitle={sectionTitles && sectionTitles.Featured_Products}
         products={
           homepage?.featuredCategoryProducts?.length > 0

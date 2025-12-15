@@ -8,6 +8,7 @@ import Image from "next/image";
 import ServeLangItem from "../Helpers/ServeLangItem";
 import appConfig from "@/appConfig";
 import { useSubscribe } from "@/hooks/useSubscribe";
+import { checkUrlImage } from "@/utils/image";
 export default function Ads() {
   const { websiteSetup } = useSelector((state) => state.websiteSetup);
   const [announcment, setAnnouncmentData] = useState(null);
@@ -71,9 +72,7 @@ export default function Ads() {
             <div
               className="lg:w-[812px] md:w-[650px] w-[310px] md:h-[509px] relative z-50 bg-slate-700 ltr:md:pl-10 ltr:pl-3 rtl:md:pr-10 rtl:pr-3 pr-3 md:py-[108px] py-20 flex flex-col justify-end overflow-hidden"
               style={{
-                backgroundImage: `url(${
-                  appConfig.BASE_URL + announcment.image
-                })`,
+                backgroundImage: `url(${checkUrlImage(announcment.image)})`,
                 backgroundRepeat: " no-repeat",
                 backgroundSize: "cover",
               }}

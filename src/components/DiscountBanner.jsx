@@ -1,3 +1,4 @@
+import { checkUrlImage } from "@/utils/image";
 import SubscribeInputWidget from "./Helpers/SubscribeInputWidget";
 import appConfig from "@/appConfig";
 export default function DiscountBanner({ className, datas }) {
@@ -8,7 +9,7 @@ export default function DiscountBanner({ className, datas }) {
       }`}
       style={{
         backgroundImage: `url(${
-          datas?.image ? appConfig.BASE_URL + datas?.image : ""
+          datas?.image ? checkUrlImage(datas?.image) : ""
         })`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",

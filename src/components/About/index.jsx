@@ -10,6 +10,7 @@ import ServeLangItem from "../Helpers/ServeLangItem";
 import settings from "../../utils/settings";
 import appConfig from "@/appConfig";
 import AboutUsSlider from "../Slider/AboutUsSlider";
+import { checkUrlImage } from "@/utils/image";
 export default function About({ aboutData }) {
   const settingTestimonial = {
     autoplay: {
@@ -51,7 +52,7 @@ export default function About({ aboutData }) {
       comments_length: item.blog.active_comments.length,
       title: item.blog.title,
       article: item.blog.description,
-      picture: appConfig.BASE_URL + item.blog.image,
+      picture: checkUrlImage(item.blog.image),
       slug: item.blog.slug,
     };
   });
@@ -73,9 +74,10 @@ export default function About({ aboutData }) {
             <div className="md:w-[570px] w-full md:h-[560px] h-auto rounded overflow-hidden my-5 lg:my-0 relative">
               <Image
                 layout="fill"
-                src={`${appConfig.BASE_URL + aboutData.aboutUs.banner_image}`}
+                src={`${checkUrlImage(aboutData.aboutUs.banner_image)}`}
                 alt="about"
                 className="w-full h-full"
+                unoptimized
               />
             </div>
             <div className="content flex-1">
