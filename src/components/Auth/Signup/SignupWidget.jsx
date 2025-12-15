@@ -323,6 +323,7 @@ function SignupWidget({ redirect = true, signupActionPopup, changeContent }) {
                     height="20"
                     src={`/assets/images/countries/${selectedCountry}.svg`}
                     alt="country"
+                    unoptimized
                   />
                 </span>
                 <span className="text-qgray">
@@ -362,6 +363,7 @@ function SignupWidget({ redirect = true, signupActionPopup, changeContent }) {
                           height="15"
                           src={`/assets/images/countries/${item.code}.svg`}
                           alt="country"
+                          unoptimized
                         />
                       </span>
                       <span className="text-sm text-qgray capitalize flex-1">

@@ -16,6 +16,7 @@ function RowV2({ styleType, datas, offerPrice, price, isProductInFlashSale }) {
               alt={datas.title || "Product Image"}
               style={{ objectFit: "scale-down" }}
               className="w-full h-full"
+              unoptimized
             />
           </div>
           <div className="flex-1 h-full flex flex-col justify-center">

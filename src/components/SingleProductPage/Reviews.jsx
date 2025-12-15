@@ -25,6 +25,7 @@ export default function Reviews({ comments }) {
                         }
                         alt=""
                         className="w-full h-full object-cover"
+                        unoptimized
                       />
                     </div>
                     <div>
@@ -78,6 +79,7 @@ export default function Reviews({ comments }) {
                               src={`/assets/images/comment-user-2.png`}
                               alt=""
                               className="w-full h-full object-cover"
+                              unoptimized
                             />
                           </div>
                           <div>

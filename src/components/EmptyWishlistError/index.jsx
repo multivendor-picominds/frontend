@@ -27,6 +27,7 @@ export default function EmptyWishlistError() {
                   style={{ objectFit: "scale-down" }}
                   src={appConfig.BASE_URL + emptyWis}
                   alt="404"
+                  unoptimized
                 />
               </div>
             )}

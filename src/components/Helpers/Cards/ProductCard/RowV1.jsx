@@ -37,6 +37,7 @@ function RowV1({
               src={`${datas.image}`}
               alt={datas.title}
               className="w-full h-full object-contain"
+              unoptimized
             />
           </div>
           <div className="flex-1 flex flex-col justify-center h-full">

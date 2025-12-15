@@ -45,7 +45,7 @@ function ColumnV1({
               onLoad={() => loadImg(datas.image)}
               className="object-contain"
               loading="lazy"
-              unoptimized={!imgSrc} // Disable optimization for spinner gif only
+              unoptimized
             />
           </div>
         </div>

@@ -89,6 +89,7 @@ export default function Ads() {
                           : "/assets/images/logo.svg"
                       }`}
                       alt="logo"
+                      unoptimized
                     />
                   </Link>
                 </div>

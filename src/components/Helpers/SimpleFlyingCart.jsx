@@ -84,6 +84,7 @@ const SimpleFlyingCart = () => {
           height={48}
           className="w-full h-full object-cover"
           priority
+          unoptimized
         />
       </div>
     </div>

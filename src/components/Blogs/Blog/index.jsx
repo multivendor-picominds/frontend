@@ -75,6 +75,7 @@ export default function Blog({ details }) {
                   src={`${appConfig.BASE_URL + details.blog.image}`}
                   alt="blog"
                   className="w-full h-full object-cover"
+                  unoptimized
                 />
               </div>
               <div className="blog pt-[24px]">
@@ -202,6 +203,7 @@ export default function Blog({ details }) {
                             src={`${appConfig.BASE_URL + post.blog.image}`}
                             alt="blog"
                             className="w-full h-full object-cover"
+                            unoptimized
                           />
                         </div>
                         <div className="flex-1 h-full flex flex-col justify-between">

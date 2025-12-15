@@ -13,6 +13,7 @@ export default function Payment() {
                   layout="fill"
                   src={`/assets/images/card-1.svg`}
                   alt="payment"
+                  unoptimized
                 />
               </div>
               <div className="flex flex-col space-y-2">
@@ -43,6 +44,7 @@ export default function Payment() {
                   layout="fill"
                   src={`/assets/images/card-2.svg`}
                   alt="payment"
+                  unoptimized
                 />
               </div>
               <div className="flex flex-col space-y-2">
@@ -73,6 +75,7 @@ export default function Payment() {
                   layout="fill"
                   src={`/assets/images/card-3.svg`}
                   alt="payment"
+                  unoptimized
                 />
               </div>
               <div className="flex flex-col space-y-2">
@@ -103,6 +106,7 @@ export default function Payment() {
                   layout="fill"
                   src={`/assets/images/card-4.svg`}
                   alt="payment"
+                  unoptimized
                 />
               </div>
               <div className="flex flex-col space-y-2">

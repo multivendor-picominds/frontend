@@ -19,6 +19,7 @@ export default function BlogCard({ className, datas }) {
           src={`${datas.picture}`}
           alt={datas.title}
           className="w-full h-full object-cover"
+          unoptimized
         />
       </div>
       {/* Blog content section */}

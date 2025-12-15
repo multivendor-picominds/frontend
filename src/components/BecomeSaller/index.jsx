@@ -434,6 +434,7 @@ function BecomeSaller() {
                                   appConfig.BASE_URL + defaultLogo
                             }
                             alt=""
+                            unoptimized
                           />
                         )}
                       </div>
@@ -480,6 +481,7 @@ function BecomeSaller() {
                                   appConfig.BASE_URL + defaultCover
                             }
                             alt=""
+                            unoptimized
                           />
                         )}
                       </div>

@@ -52,6 +52,7 @@ export default function Signup() {
                   height={480}
                   src={`${appConfig.BASE_URL + imgThumb}`}
                   alt="login"
+                  unoptimized
                 />
               )}
             </div>

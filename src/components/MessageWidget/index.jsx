@@ -620,6 +620,7 @@ function MessageWidgetContent({ pusher }) {
                             objectFit="contain"
                             src={appConfig.BASE_URL + seller.shop_logo}
                             alt={seller.shop_name}
+                            unoptimized
                           />
                         </div>
                         {/* Unread Message Badge */}
@@ -781,6 +782,7 @@ function MessageWidgetContent({ pusher }) {
                             style={{ objectFit: "scale-down" }}
                             alt="no message"
                             className="w-full h-full object-scale-down"
+                            unoptimized
                           />
                         </div>
                         <div>

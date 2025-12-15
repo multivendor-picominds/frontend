@@ -39,6 +39,7 @@ export default function SallerInfo({ products, sellerInfo }) {
                 }`}
                 alt="saller"
                 className="w-full h-full object-cover"
+                unoptimized
               />
             )}
           </div>

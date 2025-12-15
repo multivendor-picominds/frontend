@@ -22,6 +22,7 @@ function LoginLayout({ imgThumb, children }) {
                   height={480}
                   src={`${appConfig.BASE_URL + imgThumb}`}
                   alt="login"
+                  unoptimized
                 />
               )}
             </div>

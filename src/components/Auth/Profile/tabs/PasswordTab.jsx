@@ -182,6 +182,7 @@ export default function PasswordTab() {
                 websiteSetup?.payload?.image_content?.change_password_image
               }
               alt="Thumbnail"
+              unoptimized
             />
           </div>
         </div>

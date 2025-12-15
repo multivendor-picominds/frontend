@@ -206,6 +206,7 @@ export default function CommentBlog({ blog }) {
                         src={`/assets/images/comment-user-1.png`}
                         alt=""
                         className="w-full h-full object-cover"
+                        unoptimized
                       />
                     </div>
 

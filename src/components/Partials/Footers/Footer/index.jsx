@@ -53,6 +53,7 @@ export default function Footer({ settings }) {
                     style={{ objectFit: "scale-down" }}
                     src={`${appConfig.BASE_URL + settings.logo}`}
                     alt="logo"
+                    unoptimized
                   />
                 </div>
               )}
@@ -192,6 +193,7 @@ export default function Footer({ settings }) {
                   height={28}
                   src={`${appConfig.BASE_URL + footerContent.payment_image}`}
                   alt="payment-getways"
+                  unoptimized
                 />
               </Link>
             </div>

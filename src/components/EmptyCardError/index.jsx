@@ -27,6 +27,7 @@ export default function EmptyCardError() {
                   style={{ objectFit: "scale-down" }}
                   src={`${appConfig.BASE_URL}/${emptyCart}`}
                   alt="404"
+                  unoptimized
                 />
               </div>
             )}

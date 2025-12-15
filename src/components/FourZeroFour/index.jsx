@@ -34,6 +34,7 @@ export default function FourZeroFour({ breadcrumb = true }) {
                       style={{ objectFit: "scale-down" }}
                       src={appConfig.BASE_URL + siteDate}
                       alt="404"
+                      unoptimized
                     />
                   </div>
                 )}

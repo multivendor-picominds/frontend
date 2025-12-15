@@ -47,6 +47,7 @@ function AboutUsSlider({ selector, settings, aboutData }) {
                     layout="fill"
                     src={`${appConfig.BASE_URL + item.image}`}
                     alt="user"
+                    unoptimized
                   />
                 </div>
                 <div>
@@ -101,6 +102,7 @@ function AboutUsSlider({ selector, settings, aboutData }) {
                     layout="fill"
                     src={`${appConfig.BASE_URL + item.image}`}
                     alt="user"
+                    unoptimized
                   />
                 </div>
                 <div>
