@@ -4,19 +4,16 @@ import settings from "../../utils/settings";
 import SectionStyleFour from "../Helpers/SectionStyleFour";
 import SectionStyleOne from "../Helpers/SectionStyleOne";
 import SectionStyleThree from "../Helpers/SectionStyleThree";
-import SectionStyleTwo from "../Helpers/SectionStyleTwo";
 import ViewMoreTitle from "../Helpers/ViewMoreTitle";
-import Layout from "../Partials/Layout";
 import Ads from "./Ads";
-import Banner from "./Banner";
 import BestSellers from "./BestSellers";
 import BrandSection from "./BrandSection";
 import CampaignCountDown from "./CampaignCountDown";
 import TwoColumnAds from "./ProductAds/TwoColumnAds";
 import OneColumnAdsOne from "./ProductAds/OneColumnAdsOne";
 import OneColumnAdsTwo from "./ProductAds/OneColumnAdsTwo";
-import CategorySection from "./CategorySection";
-import appConfig from "@/appConfig";
+import HeroSection from "./HeroSection";
+import HotDeals from "./HotDeals";
 import { checkUrlImage } from "@/utils/image";
 
 export default function Home({ homepageData }) {
@@ -45,66 +42,59 @@ export default function Home({ homepageData }) {
   }, [isMultivendor]);
   return (
     <div className="w-full pt-[30px] pb-[60px]">
+      {/* Ads Section */}
       <Ads />
-      {homepage?.sliders?.length > 0 && (
-        <Banner
-          images={homepage.sliders}
-          services={homepage.services}
-          sidebarImgOne={
-            homepage.sliderBannerOne &&
-            parseInt(homepage.sliderBannerOne.status) === 1
-              ? homepage.sliderBannerOne
-              : null
+      
+      {/* Hero Section: Left Categories + Right Product Slider */}
+      <HeroSection 
+        homepageData={homepageData} 
+        className="md:mb-[60px] mb-[30px]" 
+      />
+      
+      {/* Hot Deals Section */}
+      <HotDeals
+        products={
+          homepage?.topRatedProducts?.length > 0
+            ? homepage?.topRatedProducts
+            : []
+        }
+        sectionTitle={sectionTitles && sectionTitles.Top_Rated_Products || "HOT DEALS"}
+        seeMoreUrl={`/products?highlight=top_product`}
+      />
+
+      {/* New Products Grid */}
+      <ViewMoreTitle
+        className="new-products md:mb-[60px] mb-[30px]"
+        seeMoreUrl={`/products?highlight=new_arrival`}
+        categoryTitle={sectionTitles && sectionTitles.New_Arrivals || "NEW PRODUCTS"}
+      >
+        <SectionStyleThree
+          products={
+            homepage?.newArrivalProducts?.length > 0
+              ? homepage?.newArrivalProducts?.slice(
+                  0,
+                  homepage?.newArrivalProducts?.length > 16
+                    ? 16
+                    : homepage?.newArrivalProducts?.length
+                )
+              : []
           }
-          sidebarImgTwo={
-            homepage.sliderBannerTwo &&
-            parseInt(homepage.sliderBannerTwo.status) === 1
-              ? homepage.sliderBannerTwo
-              : null
-          }
-          className="banner-wrapper md:mb-[60px] mb-[30px]"
         />
-      )}
-      <CategorySection
-        categories={homepage?.homepage_categories}
-        sectionTitle={sectionTitles && sectionTitles.Trending_Category}
-      />
-      <SectionStyleOne
-        products={homepage?.popularCategoryProducts}
-        categories={homepage?.popularCategories}
-        categoryBackground={checkUrlImage(
-          homepage.popularCategorySidebarBanner
-        )}
-        categoryTitle={sectionTitles && sectionTitles.Popular_Category}
-        sectionTitle={sectionTitles && sectionTitles.Popular_Category}
-        seeMoreUrl={`/products?highlight=popular_category`}
-        className="category-products md:mb-[60px] mb-[30px]"
-      />
+      </ViewMoreTitle>
+
+      {/* Other Sections Below */}
       <BrandSection
         brands={homepage?.brands?.length > 0 ? homepage.brands : []}
         sectionTitle={sectionTitles && sectionTitles.Shop_by_Brand}
         className="brand-section-wrapper md:mb-[60px] mb-[30px]"
       />
+      
       <CampaignCountDown
         className="md:mb-[60px] mb-[30px]"
         flashSaleData={homepage?.flashSale}
         downloadData={homepage?.flashSaleSidebarBanner}
         lastDate={homepage?.flashSale?.end_time}
       />
-      <ViewMoreTitle
-        className="top-selling-product md:mb-[60px] mb-[30px]"
-        seeMoreUrl={`/products?highlight=top_product`}
-        categoryTitle={sectionTitles && sectionTitles.Top_Rated_Products}
-      >
-        <SectionStyleTwo
-          products={
-            homepage?.topRatedProducts?.length &&
-            homepage?.topRatedProducts?.length > 0
-              ? homepage?.topRatedProducts
-              : []
-          }
-        />
-      </ViewMoreTitle>
       {isMultivendor === 1 && (
         <ViewMoreTitle
           className="best-sallers-section md:mb-[60px] mb-[30px]"
@@ -156,21 +146,6 @@ export default function Home({ homepageData }) {
             ? homepage?.singleBannerOne
             : null
         }
-      />
-      <SectionStyleThree
-        products={
-          homepage?.newArrivalProducts?.length > 0
-            ? homepage?.newArrivalProducts?.slice(
-                0,
-                homepage?.newArrivalProducts?.length > 16
-                  ? 16
-                  : homepage?.newArrivalProducts?.length
-              )
-            : []
-        }
-        sectionTitle={sectionTitles && sectionTitles.New_Arrivals}
-        seeMoreUrl={`/products?highlight=new_arrival`}
-        className="new-products md:mb-[60px] mb-[30px]"
       />
       <div className="w-full text-white md:mb-[60px] mb-[30px]">
         <div className="container-x mx-auto">
