@@ -5,7 +5,7 @@ import { checkUrlImage } from "@/utils/image";
 
 export default function HeroSection({ homepageData, className = "" }) {
   // Get categories for left sidebar
-  const sidebarCategories = homepageData?.homepage_categories?.slice(0, 3) || [];
+  const sidebarCategories = homepageData?.homepage_categories?.slice(2, 5) || [];
   
   // Get featured products for slider (first 3 products) - try all available product sources
   const getAllProducts = () => {
@@ -46,16 +46,6 @@ export default function HeroSection({ homepageData, className = "" }) {
                       key={index}
                       className="flex items-start gap-3 p-4 rounded-lg hover:bg-gray-50 transition-colors group border border-transparent hover:border-orange-200"
                     >
-                      <div className="w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 flex-shrink-0 relative rounded overflow-hidden bg-gray-100">
-                        <img
-                          src={checkUrlImage(category.image)}
-                          alt={category.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                          onError={(e) => {
-                            e.target.src = "/assets/images/spinner.gif";
-                          }}
-                        />
-                      </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="font-semibold text-gray-800 group-hover:text-orange-600 transition-colors text-sm md:text-base leading-tight whitespace-normal">
                           {category.name}
@@ -65,10 +55,20 @@ export default function HeroSection({ homepageData, className = "" }) {
                             pathname: "/products",
                             query: { category: category.slug },
                           }}
-                          className="mt-14 inline-block  text-orange-600 px-4 py-2 rounded font-semibold hover:bg-orange-700 transition-colors text-xs md:text-sm whitespace-nowrap"
+                          className="mt-14 inline-block  text-orange-600 px-1 py-8 rounded font-semibold  transition-colors text-xs md:text-sm whitespace-nowrap"
                         >
                           Shop Now
                         </Link>
+                      </div>
+                      <div className="w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 flex-shrink-0 relative rounded overflow-hidden bg-gray-100">
+                        <img
+                          src={checkUrlImage(category.image)}
+                          alt={category.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          onError={(e) => {
+                            e.target.src = "/assets/images/spinner.gif";
+                          }}
+                        />
                       </div>
                     </div>
                   ))
@@ -108,7 +108,7 @@ export default function HeroSection({ homepageData, className = "" }) {
                       </div>
                       
                       {/* Orange Banner at Bottom */}
-                      <div className="bg-orange-600 text-white p-5 flex-shrink-0 h-[140px] flex items-center">
+                      <div className="bg-orange-400 text-white p-5 flex-shrink-0 h-[140px] flex items-center">
                         <div className="w-full h-full flex flex-col justify-center">
                           <h3 className="text-base md:text-lg lg:text-xl font-bold uppercase mb-2 leading-tight line-clamp-2">
                             {productName}
