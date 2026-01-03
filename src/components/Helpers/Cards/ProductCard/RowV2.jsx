@@ -6,16 +6,16 @@ import Link from "next/link";
 function RowV2({ styleType, datas, offerPrice, price, isProductInFlashSale }) {
   return (
     <div className={`product-card-${styleType} w-full`}>
-      <div className="w-full h-[105px] bg-white border border-primarygray px-5 ">
+      <div className="w-full h-[140px] bg-white border border-primarygray px-5 ">
         <div className="w-full h-full flex space-x-5 justify-center items-center">
-          <div className="w-[75px] h-full relative">
+          <div className="w-[120px] h-[120px] flex-shrink-0 relative bg-gray-50 flex items-center justify-center">
             <Image
               fill
-              sizes="100%"
+              sizes="120px"
               src={`${datas.image}`}
               alt={datas.title || "Product Image"}
-              style={{ objectFit: "scale-down" }}
-              className="w-full h-full"
+              style={{ objectFit: "contain" }}
+              className="w-full h-full p-2"
               unoptimized
             />
           </div>

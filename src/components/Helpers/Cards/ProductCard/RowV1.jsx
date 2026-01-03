@@ -26,10 +26,10 @@ function RowV1({
     <div className={`w-full relative`}>
       <div
         data-aos="fade-left"
-        className={`product-card-${styleType}  w-full lg:h-[250px] h-[200px] bg-white group relative overflow-hidden `}
+        className={`product-card-${styleType}  w-full lg:h-[350px] h-[280px] bg-white group relative overflow-hidden `}
       >
         <div className="flex space-x-5 items-center w-full h-full lg:p-[30px] sm:p-5 p-2">
-          <div className="lg:w-1/2 w-1/3 h-full relative transform scale-100 group-hover:scale-110 transition duration-300 ease-in-ou">
+          <div className="lg:w-[60%] w-1/2 h-full relative transform scale-100 group-hover:scale-110 transition duration-300 ease-in-ou">
             <Image
               fill
               sizes="100%"
